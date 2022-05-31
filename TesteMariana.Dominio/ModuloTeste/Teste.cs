@@ -15,7 +15,7 @@ namespace TesteMariana.Dominio.ModuloTeste
 
         public Materia Materia { get; set; }
         public Disciplina Disciplina { get; set; }
-        public string Titulo { get; set; }
+        public string Nome { get; set; }
         public DateTime DataCriacao { get; set; }
         public int NumeroQuestoes { get; set; }
         public List<Questao> questoes { get; set; }

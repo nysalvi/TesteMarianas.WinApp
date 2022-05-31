@@ -68,7 +68,7 @@ namespace TesteMariana.WinApp.ModuloTeste
             set
             {
                 teste = value;
-                txtBoxTitulo.Text = teste.Titulo;
+                txtBoxTitulo.Text = teste.Nome;
                 comboBoxDisciplina.SelectedItem = teste.Disciplina;
                 comboBoxMateria.SelectedItem = teste.Materia;
                 dateTimePicker.Text = teste.DataCriacao.ToShortDateString();
@@ -90,7 +90,7 @@ namespace TesteMariana.WinApp.ModuloTeste
         private void btnGravar_Click(object sender, EventArgs e)
         {
                        
-                teste.Titulo = txtBoxTitulo.Text;
+                teste.Nome = txtBoxTitulo.Text;
                 teste.DataCriacao = dateTimePicker.Value;
 
                 if (checkBoxProvaRecuperacao.Checked)
@@ -135,12 +135,10 @@ namespace TesteMariana.WinApp.ModuloTeste
             Disciplina disciplinaSelecionada = (Disciplina)comboBoxDisciplina.SelectedItem;
             List<Questao> sortearQuestão = new();
 
+            Random rnd = new Random();
+
             for (int i = 0; i < numeroDeQuestoes; i++)
             {
-
-
-                Random rnd = new Random();
-
                 Materia materiaselecionada = materias[rnd.Next(materias.Count)];
 
                 foreach (Questao item in questoes)
@@ -148,8 +146,6 @@ namespace TesteMariana.WinApp.ModuloTeste
                     if (item.materia == materiaselecionada)
                         sortearQuestão.Add(item);
                 }
-
-
 
                 Random random = new Random();
 

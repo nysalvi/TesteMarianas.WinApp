@@ -53,7 +53,7 @@ namespace TesteMariana.WinApp.ModuloTeste
 
             foreach (var teste in testes)
             {
-                grid.Rows.Add(teste.Id, teste.Titulo, teste.Materia.Nome, teste.Disciplina.Nome,
+                grid.Rows.Add(teste.Id, teste.Nome, teste.Materia.Nome, teste.Disciplina.Nome,
                     teste.NumeroQuestoes, teste.DataCriacao.ToShortDateString());
             }
         }

@@ -11,7 +11,7 @@ namespace TesteMariana.Dominio.ModuloTeste
     {
         public ValidadorTeste()
         {
-            RuleFor(x => x.Titulo)
+            RuleFor(x => x.Nome)
                 .NotNull().NotEmpty(); // metodo para nao deixar o campo Titulo vazio nem nulo
 
             RuleFor(x => x.NumeroQuestoes)

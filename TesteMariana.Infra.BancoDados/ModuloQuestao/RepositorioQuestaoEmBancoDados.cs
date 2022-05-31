@@ -137,9 +137,9 @@ namespace TesteMariana.Infra.BancoDados.ModuloMateria
                 foreach (var alternativa in questao.alternativas)
                 {
                     alternativa.Id = id;
-                    comandoInsercaoAlternativa.Parameters.Clear();
                     ConfigurarParametrosAlternativa(alternativa, comandoInsercaoAlternativa);
                     comandoInsercaoAlternativa.ExecuteScalar();
+                    comandoInsercaoAlternativa.Parameters.Clear();
                 }
             conexaoComBanco.Close();
 

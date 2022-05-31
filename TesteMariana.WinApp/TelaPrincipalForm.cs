@@ -1,18 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TesteMariana.Infra.Arquivos.Compartilhado;
-using TesteMariana.Infra.Arquivos.ModuloDisciplina;
-using TesteMariana.Infra.Arquivos.ModuloQuestao;
-using TesteMariana.Infra.Arquivos.ModuloTeste;
-using TesteMariana.Infra.Arquivos.ModuloDisciplina;
-using TesteMariana.Infra.Arquivos.ModuloMateria;
 using TesteMariana.WinApp.Compartilhado;
 using TesteMariana.WinApp.ModuloQuestao;
 using TesteMariana.WinApp.ModuloTeste;
@@ -20,6 +9,7 @@ using TesteMariana.WinApp.ModuloMateria;
 using TesteMariana.WinApp.ModuloDiscliplina;
 using TesteMariana.Infra.BancoDados.ModuloDisciplina;
 using TesteMariana.Infra.BancoDados.ModuloMateria;
+using TesteMariana.Infra.BancoDados.ModuloTeste;
 
 namespace TesteMariana.WinApp
 {
@@ -156,7 +146,7 @@ namespace TesteMariana.WinApp
         private void InicializarControladores()
         {
 
-            //var repositorioTeste = new RepositorioTesteEmBancoDados();
+            var repositorioTeste = new RepositorioTesteEmBancoDados();
             var repositorioQuestao = new RepositorioQuestaoEmBancoDados();
             var repositorioMateria = new RepositorioMateriaEmBancoDados();
 
@@ -164,7 +154,7 @@ namespace TesteMariana.WinApp
 
             controladores = new Dictionary<string, ControladorBase>();
 
-            //controladores.Add("Teste", new ControladorTeste(repositorioTeste,repositorioQuestao, repositorioMateria,repositorioDisciplina));
+            controladores.Add("Teste", new ControladorTeste(repositorioTeste,repositorioQuestao, repositorioMateria,repositorioDisciplina));
             controladores.Add("Questões", new ControladorQuestao(repositorioQuestao, repositorioMateria, repositorioDisciplina));
             controladores.Add("Materia", new ControladorMateria(repositorioMateria, repositorioDisciplina));
             controladores.Add("Disciplina", new ControladorDisciplina(repositorioDisciplina));
